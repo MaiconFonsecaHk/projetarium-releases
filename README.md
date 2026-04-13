@@ -4,25 +4,72 @@ Projetarium é uma ferramenta de gestão de projetos e documentação. Este repo
 
 ---
 
-## Requisitos
+## Antes de começar
 
-| Item | Mínimo recomendado |
+Siga os passos abaixo **antes** de rodar o instalador. Pular qualquer um deles causa falha na instalação.
+
+### 1. Provisionamento da VPS
+
+| Requisito | Mínimo recomendado |
 |---|---|
 | Sistema operacional | Ubuntu 22.04 LTS ou Debian 12 |
 | CPU | 1 vCPU |
 | RAM | 1 GB |
 | Disco | 10 GB |
-| Portas abertas | 80 (HTTP), 443 (HTTPS) |
-| Domínio | Registro A apontando para o IP da VPS **antes** de rodar o instalador |
 
-> O instalador obtém certificado TLS automaticamente via Let's Encrypt (Certbot).  
+### 2. Abrir as portas no firewall
+
+O instalador precisa que as portas **80** (HTTP) e **443** (HTTPS) estejam acessíveis externamente. Sem elas o Certbot não consegue emitir o certificado TLS e a instalação falha.
+
+Como abrir as portas varia conforme o provedor:
+
+**Oracle Cloud (OCI)**
+1. Acesse **Networking → Virtual Cloud Networks → sua VCN → Security Lists**
+2. Adicione regras de entrada para TCP porta 80 e TCP porta 443, origem `0.0.0.0/0`
+3. Na própria VPS, libere também no firewall do sistema:
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw reload
+```
+
+**AWS / Lightsail**
+1. Acesse o painel da instância → **Security Groups** (AWS) ou **Firewall** (Lightsail)
+2. Adicione regras de entrada para HTTP (80) e HTTPS (443)
+
+**DigitalOcean / Hetzner / Vultr / outros**
+- Verifique se há um firewall de nível de nuvem ativo no painel do provedor e libere as portas 80 e 443
+- Se usar UFW na VPS:
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw reload
+```
+
+### 3. Apontar o domínio para a VPS
+
+1. No painel do seu registrador de domínios (Registro.br, Cloudflare, GoDaddy etc.), crie um registro **A**:
+   - **Nome:** subdomínio desejado (ex: `projetarium`)
+   - **Tipo:** `A`
+   - **Valor:** IP público da VPS
+   - **TTL:** 300 (ou o mínimo disponível)
+
+2. Aguarde a propagação do DNS (geralmente 1 a 5 minutos com TTL baixo).
+
+3. Confirme que o domínio resolve antes de instalar:
+```bash
+ping projetarium.seusite.com
+# Deve retornar o IP da sua VPS
+```
+
+> O instalador usa o Let's Encrypt para obter o certificado TLS automaticamente.
 > O domínio **precisa** resolver para o IP do servidor no momento da instalação.
 
 ---
 
 ## Instalação
 
-### 1. Baixar o instalador
+### 1. Baixar os arquivos
 
 Acesse a [release mais recente](../../releases/latest) e baixe os três arquivos:
 
@@ -30,10 +77,10 @@ Acesse a [release mais recente](../../releases/latest) e baixe os três arquivos
 - `projetarium-web.tar.gz`
 - `install.sh`
 
-Ou via terminal na própria VPS:
+Ou diretamente no terminal da VPS:
 
 ```bash
-# Substitua X.Y.Z pela versão desejada
+# Substitua X.Y.Z pela versão desejada (ex: 1.0.0)
 VERSION="X.Y.Z"
 BASE="https://github.com/MaiconFonsecaHk/projetarium-releases/releases/download/v${VERSION}"
 
@@ -68,7 +115,7 @@ Após a conclusão, abra no navegador:
 https://SEU_DOMINIO
 ```
 
-Use o usuário e senha que você definiu no passo anterior.
+Use o usuário e senha definidos no passo anterior.
 
 ---
 
@@ -80,7 +127,7 @@ Use o usuário e senha que você definiu no passo anterior.
 | PostgreSQL | Banco de dados |
 | Nginx | Proxy reverso |
 | Let's Encrypt | Certificado TLS automático |
-| PM2 | Gerenciador de processos com autostart |
+| PM2 | Gerenciador de processos com autostart no boot |
 
 ---
 
@@ -114,9 +161,8 @@ Arquivos importantes:
 
 ## Atualização
 
-Baixe os novos artefatos da release mais recente e rode o instalador novamente.  
-O script é idempotente: banco, usuário de sistema e Nginx já existentes são reaproveitados.  
-**O usuário admin existente não é recriado** — apenas o schema é atualizado.
+Baixe os novos artefatos da release mais recente e rode o instalador novamente.
+Quando detectar uma instalação existente, escolha **[2] Atualização** para preservar o banco de dados e os arquivos de upload.
 
 ---
 
