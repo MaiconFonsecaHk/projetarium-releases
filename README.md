@@ -24,11 +24,10 @@ Projetarium é uma ferramenta de gestão de projetos e documentação. Este repo
 
 ### 1. Baixar o instalador
 
-Acesse a [release mais recente](../../releases/latest) e baixe os quatro arquivos:
+Acesse a [release mais recente](../../releases/latest) e baixe os três arquivos:
 
 - `projetarium-backend.tar.gz`
 - `projetarium-web.tar.gz`
-- `nginx.conf.template`
 - `install.sh`
 
 Ou via terminal na própria VPS:
@@ -40,7 +39,6 @@ BASE="https://github.com/MaiconFonsecaHk/projetarium-releases/releases/download/
 
 wget "$BASE/projetarium-backend.tar.gz" -P /tmp/
 wget "$BASE/projetarium-web.tar.gz"     -P /tmp/
-wget "$BASE/nginx.conf.template"        -P /tmp/
 wget "$BASE/install.sh"                 -P /tmp/
 ```
 
