@@ -260,7 +260,13 @@ Os pacotes Windows e os executáveis da CLI são distribuídos nos assets indica
 
 ## Suporte e relato de problemas
 
-Abra uma [issue](../../issues) e informe:
+O suporte da edição freemium é comunitário e não possui SLA. Consulte o [guia de suporte](SUPPORT.md) e escolha o formulário adequado:
+
+- [Reportar um problema](../../issues/new?template=bug_report.yml);
+- [Sugerir uma melhoria](../../issues/new?template=feature_request.yml);
+- [Reportar uma vulnerabilidade de forma privada](SECURITY.md).
+
+Em problemas funcionais, informe:
 
 - versão exata do Projetarium;
 - edição Local ou Self-hosted;
@@ -270,6 +276,8 @@ Abra uma [issue](../../issues) e informe:
 - capturas de tela ou trechos de log já removidos de dados pessoais e segredos.
 
 Antes de relatar uma falha de dados, preserve uma cópia independente do banco ou dump e evite repetir operações destrutivas.
+
+Issues são públicas. Nunca publique banco, dump, `.env`, token, senha, chave, URL interna, caminho completo, anexo real ou conteúdo de projeto. Vulnerabilidades devem seguir exclusivamente a [política de segurança](SECURITY.md).
 
 ## Licença e distribuição
 

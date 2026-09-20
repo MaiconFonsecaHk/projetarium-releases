@@ -1,0 +1,68 @@
+name: Sugerir melhoria
+description: Proponha uma melhoria a partir de um problema ou fluxo real.
+title: "[Melhoria]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sugestões são públicas e serão avaliadas conforme impacto, segurança e compatibilidade com o roadmap. Não inclua dados pessoais, conteúdo privado de projetos, caminhos, URLs internas ou credenciais.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Proteção dos dados
+      options:
+        - label: Confirmei que a sugestão e seus anexos usam somente dados públicos ou fictícios.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema você quer resolver?
+      description: Descreva o fluxo atual e por que ele dificulta o trabalho.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Como você imagina a melhoria?
+      description: Explique o resultado esperado sem depender de uma implementação específica.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área principal
+      options:
+        - Board e projetos
+        - Canvas e blocos
+        - Backlog e timeline
+        - Tarefas e notificações
+        - Artigos e documentação
+        - Usuários e permissões
+        - CLI e agentes de IA
+        - Backup e restauração
+        - Instalação e atualização
+        - Acessibilidade
+        - Outra área
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edição relacionada
+      options:
+        - Local
+        - Self-hosted
+        - Ambas
+        - Não se aplica
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas utilizadas
+      description: Campo opcional para explicar soluções temporárias ou outras ferramentas usadas hoje.
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional saneado
+      description: Use apenas exemplos fictícios e remova qualquer informação sensível das imagens.
