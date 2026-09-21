@@ -2,7 +2,7 @@
 
 [![Versão](https://img.shields.io/badge/versão-0.1.0--beta.1-2563EB)](RELEASE_NOTES_0.1.0-beta.1.md)
 [![Alvo inicial](https://img.shields.io/badge/alvo-Windows%2010%2F11%20x64-0078D4)](#plataformas)
-[![Status](https://img.shields.io/badge/status-beta%20em%20preparação-D97706)](#download)
+[![Status](https://img.shields.io/badge/status-canal%20beta-D97706)](#download)
 [![Distribuição](https://img.shields.io/badge/distribuição-freemium-7C3AED)](TERMS.md)
 
 O **Projetarium** é um aplicativo de gestão visual e documentação de projetos
@@ -17,9 +17,10 @@ comunitários de suporte.
 
 ## Download
 
-**Ainda não existe um instalador público.** A versão `0.1.0-beta.1` está sendo
-preparada e só aparecerá em [Releases](../../releases) depois dos testes de
-instalação, atualização, remoção e preservação de dados em uma máquina limpa.
+O instalador oficial, quando promovido, aparece exclusivamente em
+[Releases](../../releases) como pré-lançamento. Se a tag `v0.1.0-beta.1` ainda
+não estiver publicada nessa página, a primeira beta continua em preparação e
+não existe um download público aprovado.
 
 Quando houver um asset publicado, baixe apenas deste repositório e confira nas
 notas da própria tag o nome do arquivo, o SHA-256 e as plataformas validadas.

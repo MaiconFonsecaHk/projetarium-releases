@@ -1,6 +1,7 @@
 # Projetarium 0.1.0-beta.1
 
-Status: rascunho, ainda sem artefato público.
+Status: beta em preparação; consulte a página de Releases para saber se o
+pré-lançamento já foi promovido.
 
 ## Escopo da beta
 
@@ -30,7 +31,7 @@ instalador, o executável, os hashes e a tag forem derivados do mesmo commit.
 - Não publique bancos, dumps, credenciais, caminhos completos ou conteúdo de
   projetos em GitHub Issues.
 
-## Validação pendente antes da publicação
+## Gate obrigatório da publicação
 
 - gerar e assinar o instalador Windows;
 - verificar instalação e primeira execução em máquina limpa;
