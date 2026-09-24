@@ -2,6 +2,8 @@
 
 O suporte público do Projetarium é comunitário e acontece neste repositório. Não há prazo garantido de resposta, atendimento individual ou SLA na edição freemium.
 
+Antes de enviar dados ao suporte, consulte a [política de privacidade](PRIVACY.md).
+
 ## Reportar um problema
 
 Use o formulário [Reportar problema](https://github.com/MaiconFonsecaHk/projetarium-releases/issues/new?template=bug_report.yml). Antes de enviar:

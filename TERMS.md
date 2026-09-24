@@ -39,6 +39,9 @@ restaurar ou utilizar o aplicativo com dados importantes. A edição Local não
 envia automaticamente o banco para uma infraestrutura operada pelo
 Projetarium.
 
+O tratamento de dados nos modos Local e Self-hosted está descrito na
+[política de privacidade](PRIVACY.md).
+
 ## Componentes de terceiros
 
 Bibliotecas, runtimes e outros componentes de terceiros permanecem sujeitos às

@@ -134,7 +134,8 @@ beta.
 ## Suporte e segurança
 
 O suporte da edição freemium é comunitário e não possui SLA. Consulte o
-[guia de suporte](SUPPORT.md) e use o formulário adequado:
+[guia de suporte](SUPPORT.md), leia a [política de privacidade](PRIVACY.md) e
+use o formulário adequado:
 
 - [reportar um problema](../../issues/new?template=bug_report.yml);
 - [sugerir uma melhoria](../../issues/new?template=feature_request.yml);
@@ -150,14 +151,15 @@ A identidade da primeira beta é:
 | Campo | Valor |
 |---|---|
 | Produto | Projetarium |
-| Publicador exibido | Projetarium |
+| Publicador exibido | Vermillion Technologies |
 | Canal | Beta |
 | Versão | `0.1.0-beta.1` |
 | Build inicial | `1` |
 
 O uso dos binários oficiais é regido pelos [termos da distribuição
 compilada](TERMS.md). Os componentes de terceiros e a forma de consultar suas
-licenças estão descritos em [avisos de terceiros](THIRD_PARTY_NOTICES.md).
+licenças estão descritos em [avisos de terceiros](THIRD_PARTY_NOTICES.md), e o
+tratamento de dados está descrito na [política de privacidade](PRIVACY.md).
 
 As mudanças e limitações específicas desta entrega estão no [rascunho das
 notas da versão 0.1.0-beta.1](RELEASE_NOTES_0.1.0-beta.1.md).
